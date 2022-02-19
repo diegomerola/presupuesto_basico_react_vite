@@ -28,7 +28,7 @@ const NuevoPresupuesto = ({ presupuesto, setPresupuesto, setIsValid }) => {
     }
   };
   return (
-    <div className="contenido-principal contenido">
+    <div className="contenido-principal contenido container">
       <h2>Coloca tu presupuesto</h2>
       <Mensaje msj={msj} tipo={msj ? "alert-danger error" : ""} />
       <form onSubmit={handleSubmit}>

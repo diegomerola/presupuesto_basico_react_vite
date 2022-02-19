@@ -1,17 +1,36 @@
 import React from "react";
 import Formulario from "./Formulario";
+import InfoPresupuesto from "./InfoPresupuesto";
+import ListadoGastos from "./ListadoGastos";
 
-const ControlPresupuesto = () => {
+const ControlPresupuesto = ({
+  agregarGasto,
+  gastos,
+  presupuesto,
+  eliminarGasto,
+  setGastoEditar,
+  gastoEditar,
+}) => {
   return (
-    <div className="row contenido-principal contenido">
-      <div className="one-half column">
-        <Formulario />
+    <>
+      <div className="contenido-principal contenido">
+        <div className="row">
+          <div className="one-half column">
+            <Formulario agregarGasto={agregarGasto} gastoEditar={gastoEditar} />
+          </div>
+          <div className="one-half column">
+            <InfoPresupuesto presupuesto={presupuesto} gastos={gastos} />
+          </div>
+        </div>
+        <div className="row">
+          <ListadoGastos
+            gastos={gastos}
+            eliminarGasto={eliminarGasto}
+            setGastoEditar={setGastoEditar}
+          />
+        </div>
       </div>
-      <div className="one-half column">
-        <h2>Componente Gastos</h2>
-        <h2>Componente InfoPresupuesto</h2>
-      </div>
-    </div>
+    </>
   );
 };
 
