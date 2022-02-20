@@ -66,7 +66,7 @@ const Formulario = ({ agregarGasto, gastoEditar }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h2>{gastoEditar.id ? "Editar Gasto" : "Agrega tus gatos aquí"}</h2>
+        <h2>{gastoEditar.id ? "Editar Gasto" : "Agrega tus gastos"}</h2>
         {msj ? (
           <Mensaje msj={msj} tipo={msj ? "alert-danger error" : ""} />
         ) : null}

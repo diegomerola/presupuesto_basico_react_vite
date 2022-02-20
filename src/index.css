@@ -128,6 +128,28 @@ h2 {
   font-size: 1em;
 }
 
+/* Listado de gastos con 3 columnas */
+.listado-gastos-col {
+  display: flex;
+  align-items: center;
+}
+
+.infoPresupuesto h2 {
+  margin-bottom: 15px;
+}
+
+/* Grafica circular de porcentaje */
+.circular {
+  width: 15rem;
+  margin: 0 auto;
+  margin-bottom: 18px;
+}
+
+.circular svg.CircularProgressbar .CircularProgressbar-text {
+  font-size: 10px;
+}
+
+/* media queries */
 @media (min-width: 400px) {
   form {
     margin-bottom: 20px;
@@ -141,10 +163,4 @@ h2 {
   .listado-gastos h2 {
     margin-bottom: 10px;
   }
-}
-
-/* Listado de gastos con 3 columnas */
-.listado-gastos-col {
-  display: flex;
-  align-items: center;
 }
