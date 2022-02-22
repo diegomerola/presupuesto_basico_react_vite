@@ -55,7 +55,7 @@ const InfoPresupuesto = ({ presupuesto, gastos }) => {
       </div>
       <div className="row ">
         <div>
-          <p className="alert alert-primary">Presupuesto:{presupuesto}</p>
+          <p className="alert alert-primary">Presupuesto:$ {presupuesto}</p>
           <p
             className={
               disponible < presupuesto / 2
@@ -63,9 +63,9 @@ const InfoPresupuesto = ({ presupuesto, gastos }) => {
                 : "alert alert-primary"
             }
           >
-            Disponible :{disponible}
+            Disponible:$ {disponible}
           </p>
-          <p className="alert alert-primary">Gastado:{gastado}</p>
+          <p className="alert alert-primary">Gastado:$ {gastado}</p>
           <input
             type="button"
             value={"Reiniciar App"}

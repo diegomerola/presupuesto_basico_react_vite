@@ -47,7 +47,7 @@ h2 {
   text-align: center;
 }
 .campo {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .error {
   text-align: center;
@@ -81,8 +81,12 @@ h2 {
 }
 
 .listado-gastos {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.listado-gastos h2 {
+  margin-top: 0px;
 }
 
 .gastos-realizados {
@@ -140,13 +144,22 @@ h2 {
 
 /* Grafica circular de porcentaje */
 .circular {
-  width: 15rem;
+  width: 12rem;
   margin: 0 auto;
   margin-bottom: 18px;
 }
 
 .circular svg.CircularProgressbar .CircularProgressbar-text {
   font-size: 10px;
+}
+
+/* Filtrar gastos */
+.gastos-filtrados {
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
+.gastos-filtrados h2 {
+  margin-bottom: 20px;
 }
 
 /* media queries */
@@ -161,6 +174,6 @@ h2 {
     margin-bottom: 0px;
   }
   .listado-gastos h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 }

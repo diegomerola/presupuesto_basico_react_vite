@@ -72,8 +72,9 @@ const Formulario = ({ agregarGasto, gastoEditar }) => {
         ) : null}
 
         <div className="campo">
-          <label>Nombre Gasto</label>
+          <label htmlFor="nombre">Nombre Gasto</label>
           <input
+            id="nombre"
             type="text"
             className="u-full-width"
             placeholder="Ej. Transporte"
@@ -82,8 +83,9 @@ const Formulario = ({ agregarGasto, gastoEditar }) => {
           />
         </div>
         <div className="campo">
-          <label>Cantidad</label>
+          <label htmlFor="cantidad">Cantidad</label>
           <input
+            id="cantidad"
             type="number"
             className="u-full-width"
             placeholder="Ej. 300"

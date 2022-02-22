@@ -12,6 +12,9 @@ const Header = ({
   eliminarGasto,
   setGastoEditar,
   gastoEditar,
+  setFiltro,
+  filtro,
+  gastosFiltrados,
 }) => {
   return (
     <header>
@@ -24,6 +27,9 @@ const Header = ({
           eliminarGasto={eliminarGasto}
           setGastoEditar={setGastoEditar}
           gastoEditar={gastoEditar}
+          setFiltro={setFiltro}
+          filtro={filtro}
+          gastosFiltrados={gastosFiltrados}
         />
       ) : (
         <NuevoPresupuesto

@@ -2,6 +2,7 @@ import React from "react";
 import Formulario from "./Formulario";
 import InfoPresupuesto from "./InfoPresupuesto";
 import ListadoGastos from "./ListadoGastos";
+import Filtros from "./Filtros";
 
 const ControlPresupuesto = ({
   agregarGasto,
@@ -10,6 +11,9 @@ const ControlPresupuesto = ({
   eliminarGasto,
   setGastoEditar,
   gastoEditar,
+  setFiltro,
+  filtro,
+  gastosFiltrados,
 }) => {
   return (
     <>
@@ -23,10 +27,15 @@ const ControlPresupuesto = ({
           </div>
         </div>
         <div className="row">
+          <Filtros setFiltro={setFiltro} />
+        </div>
+        <div className="row">
           <ListadoGastos
             gastos={gastos}
             eliminarGasto={eliminarGasto}
             setGastoEditar={setGastoEditar}
+            filtro={filtro}
+            gastosFiltrados={gastosFiltrados}
           />
         </div>
       </div>

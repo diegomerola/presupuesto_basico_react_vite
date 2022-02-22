@@ -15,6 +15,12 @@ function App() {
   // State para editar un gasto
   const [gastoEditar, setGastoEditar] = useState({});
 
+  // State para filtro
+  const [filtro, setFiltro] = useState("");
+
+  // State para gastos filtrados
+  const [gastosFiltrados, setGastosFiltrados] = useState({});
+
   // Funcion para agregar un gasto al arreglo de gastos
   const agregarGasto = (gasto) => {
     if (gasto.id) {
@@ -29,7 +35,6 @@ function App() {
       // Limpiar gastoEditar
       setGastoEditar({});
     } else {
-      console.log(gasto.id);
       // Crear id
       gasto.id = uuidv4();
 
@@ -41,9 +46,9 @@ function App() {
   // Funcion para eliminar un gasto
   const eliminarGasto = (gastoEliminar) => {
     // Buscar gasto
-    const gastosActualizado = gastos.filter((gasto) => {
-      return gasto.id !== gastoEliminar.id;
-    });
+    const gastosActualizado = gastos.filter(
+      (gasto) => gasto.id !== gastoEliminar.id
+    );
     // Actualizar arreglo de gastos
     setGastos(gastosActualizado);
   };
@@ -53,6 +58,19 @@ function App() {
       console.log("HAy un gasto para editar...");
     }
   }, [gastoEditar]);
+
+  // useEfect para cambios en filtro
+  useEffect(() => {
+    // Si existe algun filtro:
+    if (filtro.length > 0) {
+      // Filtrar los gastos que coincidan con el filtro:
+      const gastosActualizado = gastos.filter(
+        (elemento) => elemento.categoria === filtro
+      );
+      // Actualizar gastos filtrados:
+      setGastosFiltrados(gastosActualizado);
+    }
+  }, [filtro]);
 
   return (
     <div className="container">
@@ -66,6 +84,9 @@ function App() {
         eliminarGasto={eliminarGasto}
         setGastoEditar={setGastoEditar}
         gastoEditar={gastoEditar}
+        setFiltro={setFiltro}
+        filtro={filtro}
+        gastosFiltrados={gastosFiltrados}
       />
     </div>
   );
