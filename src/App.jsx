@@ -3,14 +3,20 @@ import Header from "./components/Header";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  // State para presupuesto
-  const [presupuesto, setPresupuesto] = useState(0);
+  // State para presupuesto:
+  const [presupuesto, setPresupuesto] = useState(
+    // Obtener presupuesto del LS. Sino existe asignarle = 0:
+    JSON.parse(localStorage.getItem("presupuesto")) ?? 0
+  );
+
+  // State para arreglo de gastos:
+  const [gastos, setGastos] = useState(
+    // Obtener gastos del LS. Sino existe asignarle = []
+    JSON.parse(localStorage.getItem("gastos")) ?? []
+  );
 
   // State para presupuesto valido
   const [isValid, setIsValid] = useState(false);
-
-  // State para arreglo de gastos
-  const [gastos, setGastos] = useState([]);
 
   // State para editar un gasto
   const [gastoEditar, setGastoEditar] = useState({});
@@ -52,17 +58,11 @@ function App() {
     // Actualizar arreglo de gastos
     setGastos(gastosActualizado);
   };
-  // useEffect para cambios en gastoEditar
-  useEffect(() => {
-    if (Object.keys(gastoEditar).length > 0) {
-      console.log("HAy un gasto para editar...");
-    }
-  }, [gastoEditar]);
 
   // useEfect para cambios en filtro
   useEffect(() => {
     // Si existe algun filtro:
-    if (filtro.length > 0) {
+    if (filtro) {
       // Filtrar los gastos que coincidan con el filtro:
       const gastosActualizado = gastos.filter(
         (elemento) => elemento.categoria === filtro
@@ -70,7 +70,31 @@ function App() {
       // Actualizar gastos filtrados:
       setGastosFiltrados(gastosActualizado);
     }
-  }, [filtro]);
+  }, [filtro, gastos]);
+
+  // LS para presupuesto (al iniciar la app)
+  useEffect(() => {
+    // Poner presupuesto en LS:
+    localStorage.setItem("presupuesto", JSON.stringify(presupuesto));
+
+    // Si presupuesto > 0
+    if (presupuesto > 0) {
+      // Activar pantalla de Formulario:
+      setIsValid(true);
+    }
+  }, []);
+
+  // LS para cambios en presupuesto:
+  useEffect(() => {
+    // Poner presupuesto en LS:
+    localStorage.setItem("presupuesto", presupuesto);
+  }, [presupuesto]);
+
+  // LS para cambios en gastos
+  useEffect(() => {
+    // Poner gastos en LS:
+    localStorage.setItem("gastos", JSON.stringify(gastos));
+  }, [gastos]);
 
   return (
     <div className="container">
