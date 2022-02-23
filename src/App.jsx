@@ -22,7 +22,7 @@ function App() {
   const [gastoEditar, setGastoEditar] = useState({});
 
   // State para filtro
-  const [filtro, setFiltro] = useState("");
+  const [filtro, setFiltro] = useState([]);
 
   // State para gastos filtrados
   const [gastosFiltrados, setGastosFiltrados] = useState({});
@@ -111,6 +111,7 @@ function App() {
         setFiltro={setFiltro}
         filtro={filtro}
         gastosFiltrados={gastosFiltrados}
+        setGastos={setGastos}
       />
     </div>
   );

@@ -2,7 +2,15 @@ import React, { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-const InfoPresupuesto = ({ presupuesto, gastos }) => {
+const InfoPresupuesto = ({
+  presupuesto,
+  gastos,
+  setPresupuesto,
+  setIsValid,
+  setGastos,
+  setFiltro,
+  setGastoEditar,
+}) => {
   // State para gastado
   const [gastado, setGastado] = useState(0);
 
@@ -39,6 +47,26 @@ const InfoPresupuesto = ({ presupuesto, gastos }) => {
     setPorcentaje(Number(nuevoPorcentaje));
   }, [gastos]);
 
+  // Funcion para reiniciar app
+  const reiniciarApp = () => {
+    if (confirm("Seguro desea reiniciar la app?")) {
+      // Desactivar formulario
+      setIsValid(false);
+
+      // Limpiar presupuesto
+      setPresupuesto(0);
+
+      // Limpiar arreglo de gastos
+      setGastos([]);
+
+      // Limpiar filtro
+      setFiltro([]);
+
+      // Limpiar gastos editados
+      setGastoEditar({});
+    }
+  };
+
   return (
     <div className="infoPresupuesto">
       <h2>InfoPresupuesto</h2>
@@ -70,6 +98,7 @@ const InfoPresupuesto = ({ presupuesto, gastos }) => {
             type="button"
             value={"Reiniciar App"}
             className="button u-full-width"
+            onClick={reiniciarApp}
           />
         </div>
       </div>

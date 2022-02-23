@@ -37,7 +37,8 @@ const Formulario = ({ agregarGasto, gastoEditar }) => {
       // Si hay un error:
       nombre.trim() === "" ||
       cantidad <= 0 ||
-      isNaN(cantidad)
+      isNaN(cantidad) ||
+      categoria === ""
     ) {
       // Mostrar msj de error:
       setMsj("Gasto no valido");
@@ -70,7 +71,6 @@ const Formulario = ({ agregarGasto, gastoEditar }) => {
         {msj ? (
           <Mensaje msj={msj} tipo={msj ? "alert-danger error" : ""} />
         ) : null}
-
         <div className="campo">
           <label htmlFor="nombre">Nombre Gasto</label>
           <input
@@ -113,7 +113,7 @@ const Formulario = ({ agregarGasto, gastoEditar }) => {
         <input
           type="submit"
           className="button-primary u-full-width"
-          value={gastoEditar.id ? "Guardar Gasto" : "Agregar Gasto"}
+          value={gastoEditar.id ? "Guardar" : "Agregar Gasto"}
         />
       </form>
     </div>

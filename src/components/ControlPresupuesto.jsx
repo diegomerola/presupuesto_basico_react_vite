@@ -14,6 +14,9 @@ const ControlPresupuesto = ({
   setFiltro,
   filtro,
   gastosFiltrados,
+  setPresupuesto,
+  setIsValid,
+  setGastos,
 }) => {
   return (
     <>
@@ -23,7 +26,15 @@ const ControlPresupuesto = ({
             <Formulario agregarGasto={agregarGasto} gastoEditar={gastoEditar} />
           </div>
           <div className="one-half column">
-            <InfoPresupuesto presupuesto={presupuesto} gastos={gastos} />
+            <InfoPresupuesto
+              presupuesto={presupuesto}
+              gastos={gastos}
+              setPresupuesto={setPresupuesto}
+              setIsValid={setIsValid}
+              setGastos={setGastos}
+              setFiltro={setFiltro}
+              setGastoEditar={setGastoEditar}
+            />
           </div>
         </div>
         <div className="row">

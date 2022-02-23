@@ -15,6 +15,7 @@ const Header = ({
   setFiltro,
   filtro,
   gastosFiltrados,
+  setGastos,
 }) => {
   return (
     <header>
@@ -30,6 +31,9 @@ const Header = ({
           setFiltro={setFiltro}
           filtro={filtro}
           gastosFiltrados={gastosFiltrados}
+          setPresupuesto={setPresupuesto}
+          setIsValid={setIsValid}
+          setGastos={setGastos}
         />
       ) : (
         <NuevoPresupuesto
