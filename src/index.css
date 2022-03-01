@@ -96,47 +96,44 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  align-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align: center;
   border-bottom: 1px solid lightblue;
 }
 
-.gastos-realizados input {
-  margin: 5px 2px;
-  padding: 0px 10px;
-}
-
-.gastos-realizados p {
+.nombre-gasto {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: grey;
   margin: 0px;
-  padding-left: 3px;
-  text-align: center;
-}
-
-.gasto {
-  color: white;
-  background-color: #004085;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
 
 .categoria {
-  color: darkgrey;
+  font-size: 0.8em;
   text-transform: uppercase;
-  font-size: 0.7em;
+  color: darkgrey;
+  margin: 0px;
+  padding: 5px;
 }
 
-.nombre-gasto {
-  color: grey;
-  font-weight: 700;
-  text-transform: capitalize;
-  font-size: 1em;
+.cantidad {
+  color: white;
+  background-color: #004085;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  border-radius: 5px;
 }
 
-/* Listado de gastos con 3 columnas */
-.listado-gastos-col {
-  display: flex;
-  align-items: center;
+.boton-gastos {
+  margin: 5px 5px;
+  padding: 0px 15px;
+}
+
+input[type="button"].button-secondary {
+  color: #fa071f;
+  border-color: #fa071f;
 }
 
 .infoPresupuesto h2 {
@@ -167,6 +164,9 @@ h2 {
 @media (min-width: 400px) {
   form {
     margin-bottom: 20px;
+  }
+  .listado-gastos h2 {
+    margin-bottom: 10px;
   }
 }
 

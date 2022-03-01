@@ -69,7 +69,7 @@ const InfoPresupuesto = ({
 
   return (
     <div className="infoPresupuesto">
-      <h2>InfoPresupuesto</h2>
+      <h2>Info-Presupuesto</h2>
       <div className="row circular">
         <CircularProgressbar
           value={porcentaje}
@@ -83,7 +83,7 @@ const InfoPresupuesto = ({
       </div>
       <div className="row ">
         <div>
-          <p className="alert alert-primary">Presupuesto:$ {presupuesto}</p>
+          <p className="alert alert-primary">Presupuesto: ${presupuesto}</p>
           <p
             className={
               disponible < presupuesto / 2
@@ -91,13 +91,13 @@ const InfoPresupuesto = ({
                 : "alert alert-primary"
             }
           >
-            Disponible:$ {disponible}
+            Disponible: ${disponible}
           </p>
-          <p className="alert alert-primary">Gastado:$ {gastado}</p>
+          <p className="alert alert-primary">Gastado: ${gastado}</p>
           <input
             type="button"
             value={"Reiniciar App"}
-            className="button u-full-width"
+            className="button u-full-width button-secondary "
             onClick={reiniciarApp}
           />
         </div>
