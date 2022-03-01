@@ -31,10 +31,10 @@ function App() {
   const agregarGasto = (gasto) => {
     if (gasto.id) {
       // Buscar gasto, si coincide el id reemplazar el gasto
-      console.log(gasto.id);
       const gastosActualizados = gastos.map((gastoState) =>
         gastoState.id === gasto.id ? gasto : gastoState
       );
+
       // Actualizar el arreglo de gastos
       setGastos(gastosActualizados);
 

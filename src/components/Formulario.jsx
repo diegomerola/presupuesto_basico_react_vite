@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Mensaje from "./Mensaje";
+import { animateScroll as scroll } from "react-scroll";
 
 const Formulario = ({ agregarGasto, gastoEditar }) => {
-  //useeffect para cargar datos editados en el formulario
   useEffect(() => {
     if (Object.keys(gastoEditar).length > 0) {
+      // Scroll al inicio de la pagina
+      scroll.scrollToTop();
+
+      // Cargar gastos para editar en el formulario
       setNombre(gastoEditar.nombre);
       setCantidad(gastoEditar.cantidad);
       setCategoria(gastoEditar.categoria);
